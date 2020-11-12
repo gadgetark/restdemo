@@ -3,7 +3,6 @@ package com.kc.restdemo.controller;
 import com.kc.restdemo.dto.OneUserRepo;
 import com.kc.restdemo.dto.UserAccountSource;
 import com.kc.restdemo.dto.UserFullInfo;
-import com.kc.restdemo.dto.UserRepoSource;
 import com.kc.restdemo.model.UserRepo;
 import com.kc.restdemo.service.UserLookupService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,7 +41,7 @@ public class UserController {
         UserFullInfo userFullInfo = new UserFullInfo();
         userFullInfo.setUser_name(userAccountSource.getLogin());
 
-        userFullInfo.setUserRepos(convertOneUserRepoToUserRepos(userRepoSource));
+        userFullInfo.setRepos(convertOneUserRepoToUserRepos(userRepoSource));
 
         return userFullInfo;
     }

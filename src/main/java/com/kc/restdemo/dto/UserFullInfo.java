@@ -8,7 +8,7 @@ public class UserFullInfo {
 
     private String user_name;
 
-    private List<UserRepo> userRepos;
+    private List<UserRepo> repos;
 
     public String getUser_name() {
         return user_name;
@@ -18,11 +18,11 @@ public class UserFullInfo {
         this.user_name = user_name;
     }
 
-    public List<UserRepo> getUserRepos() {
-        return userRepos;
+    public List<UserRepo> getRepos() {
+        return repos;
     }
 
-    public void setUserRepos(List<UserRepo> userRepos) {
-        this.userRepos = userRepos;
+    public void setRepos(List<UserRepo> repos) {
+        this.repos = repos;
     }
 }
