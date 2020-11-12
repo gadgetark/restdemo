@@ -1,10 +1,14 @@
 package com.kc.restdemo.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.kc.restdemo.model.UserRepo;
 
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserFullInfo {
+
+    public static final UserFullInfo EMPTY = new UserFullInfo();
 
     private String user_name;
 

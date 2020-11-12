@@ -2,6 +2,8 @@ package com.kc.restdemo.dto;
 
 public class UserRepoSource {
 
+    public static final UserRepoSource EMPTY = new UserRepoSource();
+
     private String name;
 
     private String html_url;

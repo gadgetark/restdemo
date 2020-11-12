@@ -12,6 +12,7 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -37,7 +38,7 @@ public class UserLookupServiceImpl implements UserLookupService {
             response = restTemplate.exchange(apiHostUrl + "/users/" + username, HttpMethod.GET, httpEntity, UserAccountSource.class);
         } catch (Exception e) {
             logger.error(e.getMessage());
-            throw e;
+            return UserAccountSource.EMPTY;
         }
         return response.getBody();
     }
@@ -51,7 +52,7 @@ public class UserLookupServiceImpl implements UserLookupService {
             response = restTemplate.exchange(apiHostUrl + "/users/" + username + "/repos", HttpMethod.GET, null, new ParameterizedTypeReference<List<OneUserRepo>>(){});
         } catch (Exception e) {
             logger.error(e.getMessage());
-            throw e;
+            return Collections.emptyList();
         }
         return response.getBody();
     }
