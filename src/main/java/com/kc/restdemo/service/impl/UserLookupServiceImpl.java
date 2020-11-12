@@ -31,7 +31,6 @@ public class UserLookupServiceImpl implements UserLookupService {
     public UserAccountSource getUserAccountInfo(String username) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-
         HttpEntity<UserAccountSource> httpEntity = new HttpEntity<>(headers);
         ResponseEntity<UserAccountSource> response;
         try {
@@ -47,8 +46,6 @@ public class UserLookupServiceImpl implements UserLookupService {
     public List<OneUserRepo> getUserRepoInfo(String username) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-
-//        HttpEntity<List<OneUserRepo>> httpEntity = new HttpEntity<>(headers);
         ResponseEntity<List<OneUserRepo>> response;
         try {
             response = restTemplate.exchange(apiHostUrl + "/users/" + username + "/repos", HttpMethod.GET, null, new ParameterizedTypeReference<List<OneUserRepo>>(){});
