@@ -20,3 +20,4 @@
 
 # Notes
 * The UserController, is the entry point to understand this application.
+* Even domain driven design is preferred, but due to the simple requirements of this project to access github data and combining them, I just use mostly DTO pojo to put them together.
